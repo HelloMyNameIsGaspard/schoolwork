@@ -4,120 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biography Form</title>
+    <title>Gaspard Andre's Biography</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fff;
-            color: #000;
+            background-color: #f0f0f0;
+            /* Background color */
             margin: 0;
             padding: 0;
         }
         
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            background-color: #fff;
+            /* Container background color */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Box shadow for container */
         }
         
         h1 {
             text-align: center;
+            font-size: 24px;
+            /* Font size for the name */
+            padding-bottom: 10px;
+            /* Padding below the name */
+            border-bottom: 2px solid #333;
+            /* Underline for the name */
         }
         
-        label {
-            font-weight: bold;
-        }
-        
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-        
-        textarea {
-            width: 100%;
-            height: 150px;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-        
-        button[type="submit"] {
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        
-        button[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-        
-        #display-info {
-            display: none;
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
+        p {
+            font-size: 18px;
+            /* Font size for the bio information */
+            padding: 10px 0;
+            /* Vertical padding for each paragraph */
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>Biography Form</h1>
-        <form id="bioForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-
-            <label for="age">Age:</label>
-            <input type="text" id="age" name="age" placeholder="Your Age" required>
-
-            <label for="bio">Biography:</label>
-            <textarea id="bio" name="bio" placeholder="Write a brief biography about yourself" required></textarea>
-
-            <button type="submit">Submit</button>
-        </form>
+        <h1>Gaspard Andre</h1>
+        <p>My name is Gaspard Andre. I am 15 years old.</p>
+        <p>I live in London.</p>
     </div>
-
-    <div id="display-info">
-        <h2>User Information</h2>
-        <p><strong>Name:</strong> <span id="display-name"></span></p>
-        <p><strong>Age:</strong> <span id="display-age"></span></p>
-        <p><strong>Biography:</strong> <span id="display-bio"></span></p>
-    </div>
-
-    <script>
-        // JavaScript code to display user information
-        const bioForm = document.getElementById('bioForm');
-        const displayInfo = document.getElementById('display-info');
-        const displayName = document.getElementById('display-name');
-        const displayAge = document.getElementById('display-age');
-        const displayBio = document.getElementById('display-bio');
-
-        bioForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent the form from submitting
-
-            // Get user input values
-            const name = document.getElementById('name').value;
-            const age = document.getElementById('age').value;
-            const bio = document.getElementById('bio').value;
-
-            // Display user information
-            displayName.textContent = name;
-            displayAge.textContent = age;
-            displayBio.textContent = bio;
-
-            // Show the information section
-            displayInfo.style.display = 'block';
-        });
-    </script>
 </body>
 
 </html>
