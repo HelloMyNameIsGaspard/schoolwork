@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#loginForm {
+    text-align: center;
+    margin: 20px;
+}
+
+#converter {
+    text-align: center;
+    display: none;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 10px;
+}
