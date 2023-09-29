@@ -57,8 +57,8 @@
     </div>
     <script>
         function authenticate() {
-            const usernameInput = document.getElementById("username").value;
-            const passwordInput = document.getElementById("password").value;
+            const usernameInput = document.getElementById("username").value.trim(); // Trim input
+            const passwordInput = document.getElementById("password").value.trim();
 
             // Replace 'username' and 'password' with your desired values
             const validUsername = 'username';
@@ -75,7 +75,7 @@
         }
 
         function convertToDecimal() {
-            const binaryInput = document.getElementById("binaryInput").value;
+            const binaryInput = document.getElementById("binaryInput").value.trim(); // Trim input
             const decimalOutput = document.getElementById("decimalOutput");
 
             // Check if the input is a valid binary number
@@ -88,11 +88,11 @@
         }
 
         function convertToBinary() {
-            const decimalInput = document.getElementById("decimalInput").value;
+            const decimalInput = document.getElementById("decimalInput").value.trim(); // Trim input
             const binaryOutput = document.getElementById("binaryOutput");
 
             // Check if the input is a valid decimal number
-            if (!isNaN(decimalInput) && Number.isInteger(parseFloat(decimalInput))) {
+            if (/^\d+$/.test(decimalInput)) {
                 const binaryValue = (parseInt(decimalInput)).toString(2);
                 binaryOutput.textContent = binaryValue;
             } else {
