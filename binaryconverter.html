@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary and Decimal Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        #loginForm {
+            text-align: center;
+            margin: 20px;
+        }
+        
+        #converter {
+            text-align: center;
+            display: none;
+        }
+        
+        button {
+            padding: 5px 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Binary and Decimal Converter</h1>
+
+        <!-- Authentication Form -->
+        <div id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username">
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+            <br>
+            <button onclick="authenticate()">Login</button>
+        </div>
+
+        <!-- Converter Section (Hidden by Default) -->
+        <div id="converter" style="display: none;">
+            <label for="binaryInput">Enter a binary number:</label>
+            <input type="text" id="binaryInput">
+            <button onclick="convertToDecimal()">Convert to Decimal</button>
+            <p>Decimal equivalent: <span id="decimalOutput"></span></p>
+
+            <label for="decimalInput">Enter a decimal number:</label>
+            <input type="number" id="decimalInput">
+            <button onclick="convertToBinary()">Convert to Binary</button>
+            <p>Binary equivalent: <span id="binaryOutput"></span></p>
+        </div>
+    </div>
+    <script>
+        function authenticate() {
+            const usernameInput = document.getElementById("username").value;
+            const passwordInput = document.getElementById("password").value;
+
+            // Replace 'username' and 'password' with your desired values
+            const validUsername = 'username';
+            const validPassword = 'password';
+
+            if (usernameInput === validUsername && passwordInput === validPassword) {
+                // Authentication successful, show the converter section
+                document.getElementById("loginForm").style.display = "none";
+                document.getElementById("converter").style.display = "block";
+            } else {
+                // Authentication failed, display an error message
+                alert("Authentication failed. Please check your username and password.");
+            }
+        }
+
+        function convertToDecimal() {
+            const binaryInput = document.getElementById("binaryInput").value;
+            const decimalOutput = document.getElementById("decimalOutput");
+
+            // Check if the input is a valid binary number
+            if (/^[01]+$/.test(binaryInput)) {
+                const decimalValue = parseInt(binaryInput, 2);
+                decimalOutput.textContent = decimalValue;
+            } else {
+                decimalOutput.textContent = "Invalid binary input!";
+            }
+        }
+
+        function convertToBinary() {
+            const decimalInput = document.getElementById("decimalInput").value;
+            const binaryOutput = document.getElementById("binaryOutput");
+
+            // Check if the input is a valid decimal number
+            if (!isNaN(decimalInput) && Number.isInteger(parseFloat(decimalInput))) {
+                const binaryValue = (parseInt(decimalInput)).toString(2);
+                binaryOutput.textContent = binaryValue;
+            } else {
+                binaryOutput.textContent = "Invalid decimal input!";
+            }
+        }
+    </script>
+</body>
+
+</html>
